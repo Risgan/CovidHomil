@@ -1,0 +1,7 @@
+{
+  "name": "CovidHomil",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
