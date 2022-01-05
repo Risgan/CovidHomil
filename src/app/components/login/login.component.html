@@ -1,0 +1,28 @@
+<ion-content *ngIf="isSplash">
+  <div class="body">
+    <h1>Cargando</h1>
+  </div>  
+</ion-content>
+<ion-content *ngIf="!isSplash">
+  <div class="body">
+    <div>
+      <form [formGroup]="formLogin">
+        <ion-icon class="icono" name="person-circle-outline"></ion-icon>
+        <h1 style="text-align: center;">LOGIN</h1>
+        <ion-item>
+          <ion-label position="stacked">Usuario</ion-label>
+          <ion-input placeholder="Usuario" formControlName="usuario"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Contraseña</ion-label>
+          <ion-input placeholder="Contraseña"type="password" formControlName="password"></ion-input>
+        </ion-item>
+        <br>
+        <ion-button class="boton" color="success" (click)="loguear()" [disabled]="formLogin.invalid" *ngIf="!isLogin">Login</ion-button>
+        <div style="text-align: center;">
+          <ion-spinner class="carga" name="lines" color="secondary" *ngIf="isLogin"></ion-spinner>
+        </div>        
+      </form>      
+    </div>      
+  </div>  
+</ion-content>
