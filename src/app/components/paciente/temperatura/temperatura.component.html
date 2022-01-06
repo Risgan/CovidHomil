@@ -1,11 +1,47 @@
 <!-- <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Temperatura
     </ion-title>
   </ion-toolbar>
 </ion-header> -->
+<ion-content >
+  <ion-title>
+    Temperatura
+  </ion-title>
+  <div align="center" style="margin-top:10%;">
+    <circle-progress [percent]="porcentaje"  [space]="-10" [radius]="100" [outerStrokeWidth]="10"
+      [innerStrokeWidth]="10" [outerStrokeColor]="'#4882c2'" [innerStrokeColor]="'#e7e8ea'" [animation]="true"
+      [animationDuration]="1000" [showTitle]=true [units]="'°C'" [showSubtitle]=false [title]="ok" [startFromZero]=false></circle-progress>
+      
+  </div>
 
+  <ion-fab horizontal="center" vertical="bottom" slot="fixed">
+    <ion-fab-button color="light">
+      <ion-icon name="bandage-outline"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button color="primary">
+        <ion-icon name="analytics-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+    <ion-fab-list side="end">
+      <ion-fab-button color="success">
+        <ion-icon name="heart"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+    <!-- <ion-fab-list side="bottom">
+      <ion-fab-button color="secondary">
+        <ion-icon name="logo-facebook"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list> -->
+    <ion-fab-list side="start">
+      <ion-fab-button color="danger">
+        <ion-icon name="thermometer-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+</ion-content>
 <!-- <ion-content> -->
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit mollitia earum modi, tenetur sequi soluta voluptates quas quis inventore. Nostrum iure reiciendis sapiente? Dolor alias, corporis nihil at odio voluptas.</p>
+  <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit mollitia earum modi, tenetur sequi soluta voluptates quas quis inventore. Nostrum iure reiciendis sapiente? Dolor alias, corporis nihil at odio voluptas.</p> -->
 <!-- </ion-content> -->

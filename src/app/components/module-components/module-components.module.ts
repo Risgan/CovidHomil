@@ -7,6 +7,7 @@ import { Spo2Component } from './../paciente/spo2/spo2.component';
 import { TemperaturaComponent } from './../paciente/temperatura/temperatura.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgCircleProgressModule } from 'ng-circle-progress';
 
 
 
@@ -22,7 +23,8 @@ import { CommonModule } from '@angular/common';
     CommonModule,
     FormsModule,
     IonicModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgCircleProgressModule.forRoot()
   ],
   exports:[    
     TemperaturaComponent,
