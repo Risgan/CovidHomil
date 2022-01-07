@@ -1,3 +1,32 @@
-<p>
-  ritmo works!
-</p>
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+        text="Ritmo" >
+      </ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-fab horizontal="center" vertical="bottom" slot="fixed">
+    <ion-fab-button color="light">
+      <ion-icon name="bandage-outline"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button color="primary">
+        <ion-icon name="analytics-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+    <ion-fab-list side="end">
+      <ion-fab-button color="warning">
+        <ion-icon name="map-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+    <ion-fab-list side="start">
+      <ion-fab-button color="danger">
+        <ion-icon name="thermometer-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+</ion-content>

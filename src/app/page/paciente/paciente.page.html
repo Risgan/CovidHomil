@@ -48,8 +48,8 @@
       </ion-col>
       <ion-col class="column">
         <div class="botonGrid">
-          <ion-button class="botonIr">
-            <ion-icon name="analytics-outline" class="icono" routerLink='/temperatura'></ion-icon>
+          <ion-button class="botonIr" (click)="spo2Ir()">
+            <ion-icon name="analytics-outline" class="icono"></ion-icon>
             <ion-label class="label">Saturación O2</ion-label>
           </ion-button>
         </div>        
@@ -58,7 +58,7 @@
     <ion-row class="fila">
       <ion-col class="column">
         <div class="botonGrid">
-          <ion-button class="botonIr" color="success">
+          <ion-button class="botonIr" color="success" (click)="ritmoIr()">
             <ion-icon name="heart" class="icono"></ion-icon>
             <ion-label class="label">Ritmo Cardiaco</ion-label>
           </ion-button>
@@ -66,7 +66,7 @@
       </ion-col>
       <ion-col class="column">
         <div class="botonGrid">
-          <ion-button class="botonIr" color="warning">
+          <ion-button class="botonIr" color="warning" (click)="gpsIr()">
             <ion-icon name="map" class="icono"></ion-icon>
             <ion-label class="label">GPS</ion-label>
           </ion-button>
@@ -81,12 +81,12 @@
     <ion-fab-button color="light">
       <ion-icon name="bandage-outline"></ion-icon>
     </ion-fab-button>
-    <ion-fab-list side="top">
+    <ion-fab-list side="top" (click)="spo2Ir()">
       <ion-fab-button color="primary">
         <ion-icon name="analytics-outline"></ion-icon>
       </ion-fab-button>
     </ion-fab-list>
-    <ion-fab-list side="end">
+    <ion-fab-list side="end" (click)="ritmoIr()">
       <ion-fab-button color="success">
         <ion-icon name="heart"></ion-icon>
       </ion-fab-button>
@@ -96,7 +96,7 @@
         <ion-icon name="logo-facebook"></ion-icon>
       </ion-fab-button>
     </ion-fab-list> -->
-    <ion-fab-list side="start">
+    <ion-fab-list side="start" (click)="temperaturaIr()">
       <ion-fab-button color="danger">
         <ion-icon name="thermometer-outline"></ion-icon>
       </ion-fab-button>

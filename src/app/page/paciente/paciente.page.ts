@@ -35,20 +35,19 @@ export class PacientePage implements OnInit {
   }
 
   temperaturaIr(){
-    console.log("hola")
-    this.router.navigate(['temperatura'])
+    this.router.navigate([this.router.routerState.snapshot.url+'/temperatura'])
   }
-  // loguear(){
-  //   if(this.formLogin.value.usuario=="Hola"){
-  //     this.isLogin=true;
-  //     setTimeout(() => {
-  //       this.isLogin=false;
-  //       this.router.navigate(['paciente'])
-  //     }, 3000);
-  //   }else{
-  //     this.alertaNoLogin();
-  //     this.formLogin.reset();
-  //   }
-  // }
+  
+  gpsIr(){
+    this.router.navigate([this.router.routerState.snapshot.url+'/gps'])
+  }
+
+  spo2Ir(){
+    this.router.navigate([this.router.routerState.snapshot.url+'/spo2'])
+  }
+
+  ritmoIr(){
+    this.router.navigate([this.router.routerState.snapshot.url+'/ritmo'])
+  }
 
 }
