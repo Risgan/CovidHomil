@@ -40,7 +40,7 @@
     <ion-row class="fila">
       <ion-col class="column">
         <div class="botonGrid">
-          <ion-button class="botonIr" color="danger">
+          <ion-button class="botonIr" color="danger" (click)="temperaturaIr()">
             <ion-icon name="thermometer-outline" class="icono"></ion-icon>
             <ion-label class="label">Temperatura</ion-label>
           </ion-button>
@@ -49,7 +49,7 @@
       <ion-col class="column">
         <div class="botonGrid">
           <ion-button class="botonIr">
-            <ion-icon name="analytics-outline" class="icono"></ion-icon>
+            <ion-icon name="analytics-outline" class="icono" routerLink='/temperatura'></ion-icon>
             <ion-label class="label">Saturación O2</ion-label>
           </ion-button>
         </div>        

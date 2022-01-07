@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MenuController } from '@ionic/angular';
 
 @Component({
@@ -11,7 +12,8 @@ export class PacientePage implements OnInit {
   nombreUsuario: string;
 
   constructor(
-    private menu: MenuController
+    private menu: MenuController,
+    private router: Router,
   ) { }
 
   ngOnInit() {
@@ -31,5 +33,22 @@ export class PacientePage implements OnInit {
     this.menu.enable(true, 'custom');
     this.menu.open('custom');
   }
+
+  temperaturaIr(){
+    console.log("hola")
+    this.router.navigate(['temperatura'])
+  }
+  // loguear(){
+  //   if(this.formLogin.value.usuario=="Hola"){
+  //     this.isLogin=true;
+  //     setTimeout(() => {
+  //       this.isLogin=false;
+  //       this.router.navigate(['paciente'])
+  //     }, 3000);
+  //   }else{
+  //     this.alertaNoLogin();
+  //     this.formLogin.reset();
+  //   }
+  // }
 
 }
