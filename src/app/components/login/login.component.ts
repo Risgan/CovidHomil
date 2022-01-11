@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { FirebaseService } from '../../services/firebase.service';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl} from '@angular/forms';
 import { Router } from '@angular/router';
 import { AlertController, ToastController } from '@ionic/angular';
+import { Usuarios } from 'src/app/interfaces/usuario.interface';
 
 @Component({
   selector: 'app-login',
@@ -14,29 +16,37 @@ export class LoginComponent implements OnInit {
   isLogin: boolean=false;
   isSplash: boolean=true;
 
+  usuarios: Usuarios[];
+
   constructor(
     private fb: FormBuilder,
     private alertController: AlertController,
     private toastController: ToastController,
     private router: Router,
+    private firebaseService: FirebaseService
   ) {
     this.formLogin = this.fb.group({
       usuario: ['',Validators.required],
       password: ['',Validators.required],
-    });
+    });    
+    this.firebaseService.cargarUsuarios()
    }
 
-  ngOnInit() {
+  async ngOnInit() {    
     this.splash();
   }
 
   splash(){
     setTimeout(() => {
       this.isSplash=false;
+      this.usuarios = this.firebaseService.listado
+      console.log(this.usuarios)
     }, 3000);
   }
 
   loguear(){
+    this.usuarios = this.firebaseService.listado
+    console.log(this.usuarios)
     if(this.formLogin.value.usuario=="Hola"){
       this.isLogin=true;
       setTimeout(() => {

@@ -33,7 +33,7 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
     FormsModule,
     IonicModule,
     GpsComponent,
-    LoginComponent
+    LoginComponent,
   ]
 })
 export class ModuleComponentsModule { }

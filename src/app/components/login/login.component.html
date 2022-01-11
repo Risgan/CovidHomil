@@ -1,4 +1,4 @@
-<ion-content *ngIf="isSplash">
+<ion-content *ngIf="isSplash">  
   <div class="body">
     <div style="width: 100%; text-align: center;">
       <img src="./../../../assets/images/Logo.png" style="width: 200px">
@@ -8,6 +8,7 @@
   </div>  
 </ion-content>
 <ion-content *ngIf="!isSplash">
+  <p>{{usuarios[0].correo}}asdf</p>
   <div class="body">
     <div>
       <form [formGroup]="formLogin">
