@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { AuthService } from './../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -9,7 +10,8 @@ import { Component, OnInit } from '@angular/core';
 export class RegisterPage implements OnInit {
 
   constructor(
-    private authService:AuthService
+    private authService:AuthService,
+    private router: Router,
   ) { }
 
   ngOnInit() {
@@ -23,4 +25,13 @@ export class RegisterPage implements OnInit {
       console.log(usuario)
     }
   } 
+
+  rediectUser(isVerified: boolean){
+    if(isVerified){
+      this.router.navigate(['paciente']);
+    }
+    else{
+      this.router.navigate(['verify-email'])
+    }
+  }
 }

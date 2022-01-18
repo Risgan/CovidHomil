@@ -21,7 +21,6 @@ export class FirebaseService {
                   .valueChanges()
                   .pipe(map( (usuarios: Array<Usuarios>) =>{
                     this.listado = usuarios;
-                    console.log(this.listado)
                   })
                   ).subscribe();
                   

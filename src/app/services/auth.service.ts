@@ -84,6 +84,10 @@ export class AuthService {
     }
   }
 
+  isEmailVerified(user:Usuario): boolean{
+    return user.emailVerified === true ? true : false;
+  }
+
   private updateUserData(usuario:Usuario){
     const userRef: AngularFirestoreDocument<Usuario> = this.angularFirestore.doc(`usuarios/${usuario.uid}`)
     const data: Usuario = {
