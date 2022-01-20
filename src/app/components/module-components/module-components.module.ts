@@ -17,7 +17,7 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
     Spo2Component,
     RitmoComponent,
     GpsComponent,
-    LoginComponent
+    LoginComponent,
   ],
   imports: [
     CommonModule,

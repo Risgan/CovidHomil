@@ -1,3 +1,4 @@
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from './../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
@@ -9,21 +10,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterPage implements OnInit {
 
+
+  formRegister: FormGroup;
+
   constructor(
     private authService:AuthService,
     private router: Router,
-  ) { }
+    private fb: FormBuilder
+  ) { 
+    this.formRegister= this.fb.group({
+      nombres: [null,Validators.required],
+      apellidos: [null,Validators.required],
+      tipoDoc: [null,Validators.required],
+      documento: [null,Validators.required],
+      email: [null,Validators.required],
+      password: [null,Validators.required],
+      telefono: [null,Validators.required],
+      fechaNacimiento: [null,Validators.required],
+      ciudad:[null,Validators.required],
+    });
+  }
 
   ngOnInit() {
   }
 
-  async onRegister(email, password){
-    console.log(email,password)
-    console.log(email.value,password.value)
-    let usuario = await this.authService.register(email.value, password.value)
-    if(usuario){
-      console.log(usuario)
-    }
+  async onRegister(){
+    // console.log(email,password)
+    // console.log(email.value,password.value)
+    // let usuario = await this.authService.register(email.value, password.value)
+    // if(usuario){
+    //   console.log(usuario)
+    // }
   } 
 
   rediectUser(isVerified: boolean){
@@ -33,5 +50,9 @@ export class RegisterPage implements OnInit {
     else{
       this.router.navigate(['verify-email'])
     }
+  }
+
+  probe(){
+    console.log(this.formRegister.value)
   }
 }
