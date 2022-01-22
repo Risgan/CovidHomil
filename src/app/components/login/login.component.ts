@@ -115,4 +115,13 @@ export class LoginComponent implements OnInit {
     }
   }
 
+  navRegister(){
+    console.log("reg")
+    this.router.navigate(['register']);
+  }
+
+  navForGotPassword(){
+    console.log("forgot")
+    this.router.navigate(['forgot-password']);
+  }
 }
