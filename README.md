@@ -24,7 +24,7 @@
 7. ionic g c pages/paciente/spo2
 8. ionic g c pages/paciente/ritmo
 
-##Start
+## Start
 
 1. ionic start --capacitor
 2. Use the app creation wizard? (Y/n) --> n
