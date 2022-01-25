@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "homildd": {
+      "hosting": {
+        "app": [
+          "homildd"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "homildd"
+  }
+}
