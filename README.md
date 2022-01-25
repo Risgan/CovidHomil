@@ -2,15 +2,16 @@
 
 ## Order de instalacioón
 
-1. npm install
-2. npm install @capacitor/core
-3. npm install @capacitor/cli --save-dev
-4. npm install @capacitor/android
-5. ionic build
-6. npx cap add android
-7. npx cap copy
-8. npx cap open
-9. ionic serve
+[1. ionic start](##Start)
+2. npm install
+3. npm install @capacitor/core
+4. npm install @capacitor/cli --save-dev
+5. npm install @capacitor/android
+6. ionic build
+7. npx cap add android
+8. npx cap copy
+9. npx cap open
+10. ionic serve
 
 ## Creacion Paginas
 
@@ -22,3 +23,11 @@
 6. ionic g c pages/paciente/temperatura
 7. ionic g c pages/paciente/spo2
 8. ionic g c pages/paciente/ritmo
+
+##Start
+
+1. ionic start --capacitor
+2. Use the app creation wizard? (Y/n) --> n
+3. Angular
+4. Covid Homil
+5. blank
