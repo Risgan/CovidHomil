@@ -23,6 +23,12 @@
 6. ionic g c pages/paciente/temperatura
 7. ionic g c pages/paciente/spo2
 8. ionic g c pages/paciente/ritmo
+9. ionic g module components
+10. npm install cordova-plugin-firebase
+11. npm install @awesome-cordova-plugins/firebase
+12. ionic cap sync
+13. npm i firebase
+14. ng add @angular/fire
 
 ## Start
 
