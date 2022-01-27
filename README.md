@@ -2,7 +2,7 @@
 
 ## Order de instalación
 
-1. [ionic start](## Start)
+1. ionic start
 2. npm install
 3. npm install @capacitor/core
 4. npm install @capacitor/cli --save-dev
