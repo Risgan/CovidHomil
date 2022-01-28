@@ -9,9 +9,10 @@
 5. npm install @capacitor/android
 6. ionic build
 7. npx cap add android
-8. npx cap copy
-9. npx cap open
-10. ionic serve
+8. npx cap update android
+9. npx cap copy
+10. npx cap open
+11. ionic serve
 
 ## Creacion Paginas
 
