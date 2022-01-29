@@ -16,6 +16,9 @@
 12. ionic serve
 13. npm install -g cordova-res
 14. cordova-res android --skip-config --copy
+15. npm install cordova-plugin-headercolor 
+16. npm install @awesome-cordova-plugins/header-color 
+17. ionic cap sync
 
 ## Creacion Paginas
 
@@ -45,3 +48,11 @@
 3. Angular
 4. Covid Homil
 5. blank
+
+## Color Header
+
+import { HeaderColor } from '@awesome-cordova-plugins/header-color/ngx';
+
+constructor(private headerColor: HeaderColor) { }
+
+this.headerColor.tint('#becb29');
