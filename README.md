@@ -13,6 +13,8 @@
 9. npx cap copy
 10. npx cap open
 11. ionic serve
+12. npm install -g cordova-res
+13. cordova-res android --skip-config --copy
 
 ## Creacion Paginas
 
