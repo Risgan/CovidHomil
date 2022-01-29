@@ -32,6 +32,8 @@
 14. ionic cap sync
 15. npm i firebase
 16. ng add @angular/fire
+17. npm install -g cordova-res
+18. npm install capacitor-resources
 
 ## Start
 
