@@ -1,4 +1,4 @@
-import { ModuleComponentsModule } from './../components/module-components/module-components.module';
+import { LoginPage } from './../pages/login/login.page';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
@@ -10,10 +10,13 @@ import { HomePageRoutingModule } from './home-routing.module';
 
 @NgModule({
   imports: [
-    CommonModule,    
-    HomePageRoutingModule,
-    ModuleComponentsModule
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    HomePageRoutingModule,    
   ],
-  declarations: [HomePage]
+  declarations: [
+    HomePage,    
+  ]
 })
 export class HomePageModule {}
