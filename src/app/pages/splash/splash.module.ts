@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { VerifyEmailPageRoutingModule } from './verify-email-routing.module';
+import { SplashPageRoutingModule } from './splash-routing.module';
 
-import { VerifyEmailPage } from './verify-email.page';
+import { SplashPage } from './splash.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    VerifyEmailPageRoutingModule,
+    SplashPageRoutingModule
   ],
-  declarations: [VerifyEmailPage]
+  declarations: [SplashPage]
 })
-export class VerifyEmailPageModule {}
+export class SplashPageModule {}

@@ -1,3 +1,4 @@
+import { Usuario } from './../../interface/usuario';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -15,7 +16,7 @@ export class LoginPage implements OnInit {
   formLogin: FormGroup;
   isLogin: boolean=false;
   isSplash: boolean=true;
-
+  usuarioLogin: Usuario;
   usuarios: Usuarios[];
   
   constructor(
@@ -31,7 +32,7 @@ export class LoginPage implements OnInit {
   }
 
   ngOnInit() {
-    this.splash();
+    // this.splash();
   }
 
   splash(){
@@ -55,9 +56,11 @@ export class LoginPage implements OnInit {
   async onLogin(){
     try {
       this.isLogin=true;
-      let user = await this.authService.login(this.formLogin.value.email,this.formLogin.value.password)
-      if(user){
-        const isVerified = this.authService.isEmailVerified(user);
+      // let user = await this.authService.login(this.formLogin.value.email,this.formLogin.value.password)
+      this.usuarioLogin = await this.authService.login(this.formLogin.value.email,this.formLogin.value.password)
+      console.log(this.usuarioLogin)
+      if(this.usuarioLogin){
+        const isVerified = this.authService.isEmailVerified(this.usuarioLogin);
         this.rediectUser(isVerified);
         this.isLogin=false; 
 
@@ -65,6 +68,7 @@ export class LoginPage implements OnInit {
       else{
         console.log("no esta registrado")
         this.isLogin=false;
+        this.alertaNoLogin()
       }
     } catch (error) {
       console.log(error)
@@ -75,9 +79,9 @@ export class LoginPage implements OnInit {
   async onLoginGoogle(){
     try {
       this.isLogin=true;
-      let user = await this.authService.loginGoogle()
-      if(user){
-        const isVerified = this.authService.isEmailVerified(user);
+      this.usuarioLogin = await this.authService.loginGoogle()
+      if(this.usuarioLogin){
+        const isVerified = this.authService.isEmailVerified(this.usuarioLogin);
         this.rediectUser(isVerified);
         this.isLogin=false; 
         this.router.navigate(['paciente'])
@@ -92,7 +96,8 @@ export class LoginPage implements OnInit {
       this.router.navigate(['paciente']);
     }
     else{
-      this.router.navigate(['verify-email'])
+      console.log(this.usuarioLogin)
+      this.router.navigate(['verify-email',{correo :this.usuarioLogin.email}])
     }
   }
 
@@ -107,9 +112,9 @@ export class LoginPage implements OnInit {
   }
 
   async ok(){
-    this.authService.ok();
-    let user = await this.authService.login(this.formLogin.value.email,this.formLogin.value.password)
-    console.log(user)
+    // this.authService.ok();
+    this.usuarioLogin = await this.authService.login(this.formLogin.value.email,this.formLogin.value.password)
+    console.log(this.usuarioLogin,Object.values(this.usuarioLogin),this.usuarioLogin.email)
   }
 
 }

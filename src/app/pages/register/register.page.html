@@ -8,53 +8,103 @@
 </ion-header>
 
 <ion-content>
+  <form [formGroup]="formRegister">
+    <ion-card>
+      <ion-item>
+        <ion-icon slot="start" name="person-circle-outline"></ion-icon>
+        <ion-label position="floating">Nombres</ion-label>          
+        <ion-input formControlName="nombres" [(ngModel)]="formRegister.value.nombres" type="text" ></ion-input>
+      </ion-item>
+    </ion-card>
 
-  <ion-card>
-    <ion-item>
-      <ion-icon slot="start" name="lock-closed-outline"></ion-icon>
-      <ion-label position="floating">Nombres</ion-label>          
-      <ion-input type="text" ></ion-input>
-    </ion-item>
-  </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-icon slot="start" name="people-circle-outline"></ion-icon>
+        <ion-label position="floating">Apellidos</ion-label>          
+        <ion-input formControlName="apellidos" [(ngModel)]="formRegister.value.apellidos" type="text"></ion-input>
+      </ion-item>
+    </ion-card>
 
-  <ion-card>
-    <ion-item>
-      <ion-icon slot="start" name="lock-closed-outline"></ion-icon>
-      <ion-label position="floating">Apellidos</ion-label>          
-      <ion-input type="text" ></ion-input>
-    </ion-item>
-  </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-icon slot="start" name="card-outline"></ion-icon>
+        <ion-label position="floating">Tipo de documento</ion-label>  
+        <ion-select formControlName="tipoDocumento" [(ngModel)]="formRegister.value.tipoDocumento" >
+          <ion-select-option value="Cedula de ciudadania">Cedula de ciudadania</ion-select-option>
+          <ion-select-option value="Tarjeta de identidad">Tarjeta de identidad</ion-select-option>
+          <ion-select-option value="Cedula Extranjera">Cedula Extranjera</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-card>
 
-  <ion-card>
-    <ion-item>
-      <ion-icon slot="start" name="lock-closed-outline"></ion-icon>
-      <ion-label position="floating">Correo</ion-label>          
-      <ion-input type="text" ></ion-input>
-    </ion-item>
-  </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-icon slot="start" name="id-card-outline"></ion-icon>
+        <ion-label position="floating">Numero de documento</ion-label>          
+        <ion-input formControlName="documento" [(ngModel)]="formRegister.value.documento" type="text"></ion-input>
+      </ion-item>
+    </ion-card>
 
-  <ion-card>
-    <ion-item>
-      <ion-icon slot="start" name="lock-closed-outline"></ion-icon>
-      <ion-label position="floating">Contraseña</ion-label>          
-      <ion-input type="password" ></ion-input>
-    </ion-item>
-  </ion-card>
+    <ion-card>
+      <ion-item button="true" id="open-date-input">
+        <ion-icon slot="start" name="calendar-outline"></ion-icon>
+        <ion-label position="floating">Fecha Nacimiento</ion-label> 
+        <ion-input  [value]="formRegister.value.fechaNacimiento | date:'dd/MMM/YYYY'" type="text"></ion-input>
+        <ion-popover trigger="open-date-input" show-backdrop="true" >
+          <ng-template>
+            <ion-datetime
+              presentation="Fecha Nacimiento"
+              formControlName="fechaNacimiento" 
+              [(ngModel)]="formRegister.value.fechaNacimiento"
+              [showDefaultButtons]="true"
+            ></ion-datetime>
+          </ng-template>
+        </ion-popover>
+      </ion-item>
+    </ion-card>
 
-  <ion-card>
-    <ion-item>
-      <ion-icon slot="start" name="lock-closed-outline"></ion-icon>
-      <ion-label position="floating">Telefono</ion-label>          
-      <ion-input type="text" ></ion-input>
-    </ion-item>
-  </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-icon slot="start" name="mail-outline"></ion-icon>
+        <ion-label position="floating">Correo</ion-label>          
+        <ion-input formControlName="email" [(ngModel)]="formRegister.value.email" type="text" ></ion-input>
+      </ion-item>
+    </ion-card>
 
-  <ion-card>
-    <ion-item>
-      <ion-icon slot="start" name="lock-closed-outline"></ion-icon>
-      <ion-label position="floating">Dirección</ion-label>          
-      <ion-input type="text" ></ion-input>
-    </ion-item>
-  </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-icon slot="start" name="key-outline"></ion-icon>
+        <ion-label position="floating">Contraseña</ion-label>          
+        <ion-input formControlName="password" [(ngModel)]="formRegister.value.password" type="password" ></ion-input>
+      </ion-item>
+    </ion-card>
 
+    <ion-card>
+      <ion-item>
+        <ion-icon slot="start" name="call-outline"></ion-icon>
+        <ion-label position="floating">Telefono</ion-label>          
+        <ion-input formControlName="telefono" [(ngModel)]="formRegister.value.telefono" type="number" ></ion-input>
+      </ion-item>
+    </ion-card>
+
+    <ion-card>
+      <ion-item>
+        <ion-icon slot="start" name="navigate-circle-outline"></ion-icon>
+        <ion-label position="floating">Dirección</ion-label>          
+        <ion-input formControlName="direccion" [(ngModel)]="formRegister.value.direccion" type="text" ></ion-input>
+      </ion-item>
+    </ion-card>
+
+    <ion-card>
+      <ion-item>
+        <ion-icon slot="start" name="map-outline"></ion-icon>
+        <ion-label position="floating">Ciudad</ion-label>          
+        <ion-input formControlName="ciudad" [(ngModel)]="formRegister.value.ciudad" type="text"></ion-input>
+      </ion-item>
+    </ion-card>
+
+    <ion-button [disabled]="formRegister.invalid" (click)="onRegister()">Registrar</ion-button>
+    <ion-button (click)="ok()">Registrar</ion-button>
+
+  </form> 
 </ion-content>

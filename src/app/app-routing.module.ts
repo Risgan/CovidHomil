@@ -5,12 +5,17 @@ const routes: Routes = [
   {
     path: 'home',
     // loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
-    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+    // loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () => import('./pages/splash/splash.module').then( m => m.SplashPageModule)
   },
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'splash',
     pathMatch: 'full'
+  },
+  {
+    path: 'splash',
+    loadChildren: () => import('./pages/splash/splash.module').then( m => m.SplashPageModule)
   },
   {
     path: 'login',
@@ -35,6 +40,10 @@ const routes: Routes = [
   {
     path: 'doctor',
     loadChildren: () => import('./pages/doctor/doctor.module').then( m => m.DoctorPageModule)
+  },
+  {
+    path: 'splash',
+    loadChildren: () => import('./pages/splash/splash.module').then( m => m.SplashPageModule)
   },
 ];
 

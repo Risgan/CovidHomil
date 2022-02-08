@@ -57,7 +57,7 @@ export class AuthService {
   async login(email: string,password: string): Promise<Usuario> {
     try {
       const {user}=await this.afAuth.signInWithEmailAndPassword(email,password);
-      this.updateUserData(user);
+      //this.updateUserData(user);
       console.log(user)
       return user;
     } catch (error) {
@@ -103,7 +103,7 @@ export class AuthService {
     return user.emailVerified === true ? true : false;
   }
 
-  private updateUserData(usuario:Usuario){
+  updateUserData(usuario:Usuario){
     const userRef: AngularFirestoreDocument<Usuario> = this.angularFirestore.doc(`usuarios/${usuario.uid}`)
     const data: Usuario = {
       uid: usuario.uid,
@@ -113,15 +113,15 @@ export class AuthService {
       providerId:usuario.providerId,
       photoURL:usuario.photoURL,
       phoneNumber: usuario.phoneNumber,
-      // photoURL,
-      // phoneNumber
-      // nombres:  usuario.nombres ,
-      // apellidos: usuario.apellidos,
-      // tipoDoc: usuario.tipoDoc,
-      // documento: usuario.documento,
-      // telefono: usuario.telefono,
-      // fechaNacimiento: usuario.fechaNacimiento,
-      // ciudad: usuario.ciudad
+      nombres: usuario.nombres,
+      apellidos: usuario.apellidos,
+      tipoDoc: usuario.tipoDoc,
+      documento: usuario.documento,
+      fechaNacimiento: usuario.fechaNacimiento,
+      ciudad: usuario.ciudad,
+      direccion: usuario.direccion,
+      telefono: usuario.telefono,
+      tipoUsuario: usuario.tipoUsuario
     }
     console.log(data,userRef)
     return userRef.set(data,{merge:true});

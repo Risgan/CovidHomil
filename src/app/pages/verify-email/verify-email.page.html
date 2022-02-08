@@ -3,10 +3,19 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
-    <ion-title>verify-email</ion-title>
+    <ion-title>verificación de cuenta</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-card>
+    <ion-card-header style="text-align: center;">
+      <h2 style="display: flex;">verificación</h2>
+    </ion-card-header>
+    <ion-item>
+      <ion-text>el correo {{correo}} con el que intenta acceder aun no ha sido verificado</ion-text>
+    </ion-item>
+    <br>
+  </ion-card>
+  <ion-button (click)="sendVerificacion()" style="display: flex;">Enviar verificación de nuevo</ion-button>
 </ion-content>

@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Component, Input, OnInit } from '@angular/core';
+import { Usuario } from './../../interface/usuario';
 
 @Component({
   selector: 'app-verify-email',
@@ -7,9 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VerifyEmailPage implements OnInit {
 
-  constructor() { }
+  correo: string;
+
+  constructor(
+    private router: Router,
+    private routes: ActivatedRoute,
+    private auth: AuthService
+  ) { }
 
   ngOnInit() {
+    this.correo = this.routes.snapshot.paramMap.get("correo")
+  }
+
+  sendVerificacion(){
+    this.auth.sendVerificationEmail();
+    this.router.navigate(['login'])
   }
 
 }
