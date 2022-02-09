@@ -8,17 +8,18 @@
 4. npm install @capacitor/cli --save-dev
 5. npm install @capacitor/android
 6. ionic build
-7. npx cap add android
-8. npx cap update android
-9. npx cap copy
-10. npx cap open
-11. npx cap sync
-12. ionic serve
-13. npm install -g cordova-res
-14. cordova-res android --skip-config --copy
-15. npm install cordova-plugin-headercolor 
-16. npm install @awesome-cordova-plugins/header-color 
-17. ionic cap sync
+7. npx cap init
+8. npx cap add android
+9. npx cap update android
+10. npx cap copy
+11. npx cap open
+12. npx cap sync
+13. ionic serve
+14. npm install -g cordova-res
+15. cordova-res android --skip-config --copy
+16. npm install cordova-plugin-headercolor 
+17. npm install @awesome-cordova-plugins/header-color 
+18. ionic cap sync
 
 ## Creacion Paginas
 
