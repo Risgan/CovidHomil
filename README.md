@@ -57,3 +57,17 @@ import { HeaderColor } from '@awesome-cordova-plugins/header-color/ngx';
 constructor(private headerColor: HeaderColor) { }
 
 this.headerColor.tint('#becb29');
+
+## Cirular Progress
+
+1. npm install ng-circle-progress --save
+2. https://www.npmjs.com/package/ng-circle-progress
+
+## Bluetooth BLE
+
+1.  npm install cordova-plugin-ble-central 
+2.  npm install @awesome-cordova-plugins/ble
+3.  ionic cap sync
+4.  import { BLE } from '@awesome-cordova-plugins/ble/ngx';
+5.  constructor(private ble: BLE) { }
+6.  https://ionicframework.com/docs/native/ble
