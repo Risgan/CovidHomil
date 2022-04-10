@@ -1,3 +1,17 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button
+        text="Temperatura" >
+      </ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
 <ion-content style="background-color: rebeccapurple;">
-  <div class="circular-progress"></div>
+  
+ <circle-progress [percent]="porcentaje"  [space]="-10" [radius]="100" [outerStrokeWidth]="10"
+      [innerStrokeWidth]="10" [outerStrokeColor]="'#4882c2'" [innerStrokeColor]="'#e7e8ea'" [animation]="true"
+      [animationDuration]="1000" [showTitle]=true [units]="'°C'" [showSubtitle]=false [title]="ok" [startFromZero]=false></circle-progress>
+
 </ion-content>

@@ -10,6 +10,7 @@ const routes: Routes = [
   },
   {
     path: '',
+    // redirectTo: 'paciente',
     redirectTo: 'splash',
     pathMatch: 'full'
   },
@@ -40,10 +41,6 @@ const routes: Routes = [
   {
     path: 'doctor',
     loadChildren: () => import('./pages/doctor/doctor.module').then( m => m.DoctorPageModule)
-  },
-  {
-    path: 'splash',
-    loadChildren: () => import('./pages/splash/splash.module').then( m => m.SplashPageModule)
   },
 ];
 

@@ -1,0 +1,46 @@
+.contentTittle{
+    margin: 10px 0px 0px 0px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.contentSubTittle{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.botonIr{
+    width: 90%;
+    height: 100%;
+}
+.icono{
+    font-size: 500%;
+    margin: 20px 0;
+}
+.label{
+    font-size: 160%;
+}
+
+.bagbutton{
+    position: fixed;
+    top: 5px;
+    right: 5px;
+    font-size: 20px;
+}
+
+.card{
+    width: 100%;
+}
+
+.conexion{
+    position: fixed;
+    bottom: 1px;
+    right: 1px;
+    font-size: 10px;
+}
+
+.bluetooth{
+    position: fixed; 
+    top: 2px; 
+    right: 2px;
+}

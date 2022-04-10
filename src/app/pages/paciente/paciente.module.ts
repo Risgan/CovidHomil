@@ -1,3 +1,4 @@
+import { CuentaUsuarioComponent } from './../cuenta-usuario/cuenta-usuario.component';
 import { TemperaturaComponent } from './temperatura/temperatura.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -8,6 +9,7 @@ import { IonicModule } from '@ionic/angular';
 import { PacientePageRoutingModule } from './paciente-routing.module';
 
 import { PacientePage } from './paciente.page';
+import { NgCircleProgressModule } from 'ng-circle-progress';
 
 @NgModule({
   imports: [
@@ -15,7 +17,11 @@ import { PacientePage } from './paciente.page';
     FormsModule,
     IonicModule,
     PacientePageRoutingModule,
+    NgCircleProgressModule.forRoot()
   ],
-  declarations: [PacientePage,TemperaturaComponent]
+  declarations: [
+    PacientePage,
+    CuentaUsuarioComponent  
+  ]
 })
 export class PacientePageModule {}

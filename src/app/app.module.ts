@@ -13,6 +13,9 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import {AngularFireModule} from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { NgCircleProgressModule } from 'ng-circle-progress';
+import { BLE } from '@awesome-cordova-plugins/ble/ngx';
+import { BluetoothSerial } from '@awesome-cordova-plugins/bluetooth-serial/ngx';
 
 
 @NgModule({
@@ -30,11 +33,23 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
     provideFirestore(() => getFirestore()),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule, 
+    NgCircleProgressModule.forRoot({
+      radius: 100,
+      outerStrokeWidth: 16,
+      innerStrokeWidth: 8,
+      outerStrokeColor: "#78C000",
+      innerStrokeColor: "#C7E596",
+      animationDuration: 300,
+    }),
   ],
-  providers: [{ 
-    provide: RouteReuseStrategy, 
-    useClass: IonicRouteStrategy 
-  }],
+  providers: [
+    BLE,
+    BluetoothSerial,
+    { 
+      provide: RouteReuseStrategy, 
+      useClass: IonicRouteStrategy,
+    }
+  ],
   bootstrap: [
     AppComponent
   ],

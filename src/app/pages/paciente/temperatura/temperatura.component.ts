@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TemperaturaComponent implements OnInit {
 
+  porcentaje = 10;
+  ok="10"
   constructor() { }
 
   ngOnInit() {}
